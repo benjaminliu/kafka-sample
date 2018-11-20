@@ -1,0 +1,18 @@
+mykafka:
+  consumer:
+    ticketvalid:
+      servers: 127.0.0.1:9092
+      topic: test-topic
+      groupid: foo
+
+  producer:
+    songsan:
+      servers: 127.0.0.1:9092
+      topic: test-topic
+
+task:
+  executor:
+    poolsize-min: 1
+    poolsize-max: 10
+    #空闲线程保留1个小时
+    keepalivesecond: 3600
