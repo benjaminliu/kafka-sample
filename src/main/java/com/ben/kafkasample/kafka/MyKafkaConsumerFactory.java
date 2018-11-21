@@ -95,7 +95,8 @@ public class MyKafkaConsumerFactory {
             DefaultKafkaConsumerFactory<String, String> cf = new DefaultKafkaConsumerFactory<>(props);
 
             KafkaMessageListenerContainer<String, String> container = new KafkaMessageListenerContainer<>(cf, containerProperties);
-
+            //forbid auto startup
+            container.setAutoStartup(false);
             return container;
         } catch (Exception e) {
             logger.info("初始化kafka消费者时报错", e);
